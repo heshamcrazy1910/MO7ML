@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>محمّل — تحميل فيديو وصوت</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <h1>محمّل</h1>
+    <p>الصق الرابط، اختار فيديو أو صوت، وحمّل. وفي قوائم التشغيل بضغطة واحدة.</p>
+  </header>
+
+  <section class="card">
+    <label for="url">رابط الفيديو أو قائمة التشغيل</label>
+    <div class="row">
+      <input id="url" type="url" dir="ltr" placeholder="https://..." autocomplete="off">
+      <button id="paste" class="ghost" type="button">لصق</button>
+      <button id="fetch" type="button">تحليل الرابط</button>
+    </div>
+    <p id="msg" class="msg" role="status"></p>
+  </section>
+
+  <section id="result" class="card" hidden>
+    <div class="preview">
+      <img id="thumb" alt="">
+      <div>
+        <h2 id="title"></h2>
+        <p id="meta" class="muted"></p>
+      </div>
+    </div>
+
+    <div class="seg" role="tablist">
+      <button class="on" data-mode="video" type="button">فيديو</button>
+      <button data-mode="audio" type="button">صوت MP3</button>
+    </div>
+
+    <div class="row opts">
+      <div id="qualityBox">
+        <label for="quality">الجودة</label>
+        <select id="quality">
+          <option value="2160">4K (2160p)</option>
+          <option value="1440">2K (1440p)</option>
+          <option value="1080" selected>1080p</option>
+          <option value="720">720p</option>
+          <option value="480">480p</option>
+          <option value="360">360p</option>
+        </select>
+      </div>
+      <label id="plBox" class="check" hidden>
+        <input type="checkbox" id="whole" checked>
+        <span>تحميل القائمة كاملة (<b id="count">0</b> عنصر) في ملف ZIP</span>
+      </label>
+    </div>
+
+    <button id="download" class="big" type="button">تحميل</button>
+  </section>
+
+  <footer>
+  <div class="social">
+    <a href="https://wa.me/heshamcrazy19" target="_blank" rel="noopener" aria-label="واتساب"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 1.900c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.400 1.500.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.800.9c.3.100.5.200.5.300.1.200.1.800-.2 1.400z"/></svg></a>
+    <a href="https://www.facebook.com/share/14s7tuikb33/" target="_blank" rel="noopener" aria-label="فيسبوك"><svg viewBox="0 0 24 24"><path d="M13.500 22v-8.500h2.900l.5-3.500h-3.400V7.800c0-1 .3-1.700 1.700-1.700H17V3c-.3 0-1.400-.1-2.600-.1-2.600 0-4.400 1.600-4.400 4.500V10H7v3.500h3V22z"/></svg></a>
+    <a href="https://instagram.com/hesham.hassan19" target="_blank" rel="noopener" aria-label="إنستجرام"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm5 3.500A4.500 4.500 0 1 1 7.500 12 4.500 4.500 0 0 1 12 7.500zm0 2A2.500 2.500 0 1 0 14.500 12 2.500 2.500 0 0 0 12 9.500zM17.300 6a1.100 1.100 0 1 1-1.100 1.100A1.100 1.100 0 0 1 17.300 6z"/></svg></a>
+  </div>
+  <p>© heshamcrazy — حمّل المحتوى اللي ليك حق فيه بس.</p></footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
